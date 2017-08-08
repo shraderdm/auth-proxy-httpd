@@ -50,9 +50,9 @@ RUN yum install -y yum-utils gettext hostname && \
     yum-config-manager --enable rhel-server-rhscl-7-rpms && \                   
     yum-config-manager --enable rhel-7-server-optional-rpms && \                
     yum-config-manager --enable rhel-7-server-ose-3.5-rpms && \                 
-    INSTALL_PKGS="nss_wrapper bind-utils httpd24 httpd24-mod_ssl" && \          
-    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS mod_proxy_html && \                   
-    rpm -V $INSTALL_PKGS mod_proxy_html && \                                                   
+    INSTALL_PKGS="nss_wrapper bind-utils httpd24 httpd24-mod_ssl mod_proxy_html" && \          
+    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \                   
+    rpm -V $INSTALL_PKGS && \                                                   
     yum clean all                                                               
                                                                                 
 ENV HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \          
