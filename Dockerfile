@@ -1,12 +1,15 @@
-#FROM registry.access.redhat.com/rhscl/httpd-24-rhel7
-#MAINTAINER David Shrader
+FROM registry.access.redhat.com/rhscl/httpd-24-rhel7
+MAINTAINER David Shrader
 
-#USER root
+USER root
 #RUN yum remove -y httpd
 #RUN yum update -y
 #RUN yum --enablerepo rhel-7-server-optional-rpms install -y mod_proxy_html && yum clean all
 
-FROM sha256:c8b1a95b13d00df9f843f31cd496b4783bf9963a3dff8718a3adabc8980dcde9    
+############TESTING BUILD BASED ON OCP httpd24 image...not working currently#############################
+###################Keeping notes below for future reference##############################################
+
+#FROM sha256:c8b1a95b13d00df9f843f31cd496b4783bf9963a3dff8718a3adabc8980dcde9    
                                                                                 
 # Apache HTTP Server image.                                                     
 #                                                                               
@@ -16,9 +19,9 @@ FROM sha256:c8b1a95b13d00df9f843f31cd496b4783bf9963a3dff8718a3adabc8980dcde9
 # Environment:                                                                  
 #  * $HTTPD_LOG_TO_VOLUME (optional) - When set, httpd will log into /var/log/httpd24                                                                           
 
-MAINTAINER David Shrader
+#MAINTAINER David Shrader
 
-USER root
+#USER root
 
 ENV HTTPD_VERSION=2.4                                                           
                                                                                 
@@ -43,10 +46,10 @@ LABEL name="rhscl/httpd-24-rhel7" \
       com.redhat.component="httpd24-docker" \                                   
       architecture="x86_64"                                                     
                                                                                 
-EXPOSE 80                                                                       
-EXPOSE 443                                                                      
-EXPOSE 8080                                                                     
-EXPOSE 8443    
+#EXPOSE 80                                                                       
+#EXPOSE 443                                                                      
+#EXPOSE 8080                                                                     
+#EXPOSE 8443    
 
 RUN yum install -y yum-utils gettext hostname && \                              
     yum-config-manager --enable rhel-server-rhscl-7-rpms && \                   
@@ -78,7 +81,7 @@ ENV BASH_ENV=${HTTPD_APP_ROOT}/scl_enable \
 #COPY ./s2i/bin/ $STI_SCRIPTS_PATH                                               
 #COPY ./root /                                                                   
                                                                                 
-RUN /usr/libexec/httpd-prepare                                                  
+#RUN /usr/libexec/httpd-prepare                                                  
                                                                                 
 USER 1001                                                                       
                                                                                 
