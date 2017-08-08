@@ -18,17 +18,14 @@ FROM sha256:c8b1a95b13d00df9f843f31cd496b4783bf9963a3dff8718a3adabc8980dcde9
                                                                                 
 ENV HTTPD_VERSION=2.4                                                           
                                                                                 
-ENV SUMMARY="Platform for running Apache HTTP $HTTPD_VERSION Server or building 
-httpd-based application" \                                                      
-    DESCRIPTION="Apache HTTP $HTTPD_VERSION available as docker container, is a 
-powerful, efficient, \                                                          
-and extensible web server. Apache supports a variety of features, many implement
-ed as compiled modules \                                                        
+ENV SUMMARY="Platform for running Apache HTTP $HTTPD_VERSION Server or building httpd-based application" \                                                      
+    DESCRIPTION="Apache HTTP $HTTPD_VERSION available as docker container, is a powerful, efficient, \                                                          
+and extensible web server. Apache supports a variety of features, many implemented as compiled modules \                                                        
 which extend the core functionality. \                                          
-These can range from server-side programming language support to authentication 
-schemes. \                                                                      
-Virtual hosting allows one Apache installation to serve many different Web sites
-."                                                                              
+These can range from server-side programming language support to authentication schemes. \                                                                      
+Virtual hosting allows one Apache installation to serve many different Web sites."                                                                              
+
+
 LABEL summary="$SUMMARY" \                                                      
       description="$DESCRIPTION" \                                              
       io.k8s.description="$SUMMARY" \                                           
