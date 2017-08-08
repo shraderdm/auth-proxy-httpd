@@ -15,7 +15,9 @@ FROM sha256:c8b1a95b13d00df9f843f31cd496b4783bf9963a3dff8718a3adabc8980dcde9
 #  * /var/log/httpd24 - Storage for logs when $HTTPD_LOG_TO_VOLUME is set       
 # Environment:                                                                  
 #  * $HTTPD_LOG_TO_VOLUME (optional) - When set, httpd will log into /var/log/httpd24                                                                           
-                                                                                
+
+USER root
+
 ENV HTTPD_VERSION=2.4                                                           
                                                                                 
 ENV SUMMARY="Platform for running Apache HTTP $HTTPD_VERSION Server or building httpd-based application" \                                                      
